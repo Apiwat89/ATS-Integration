@@ -1,0 +1,16 @@
+{
+  "name": "ats-integration",
+  "version": "1.0.0",
+  "description": "ใช้เทส node ใช้งานได้ไหม แบบ Portable\r cd D:\\CPF Intern\\node-v20.11.0-win-x64\r .\\npm.cmd -v\r .\\npm.cmd init -y",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.13.2",
+    "express": "^5.1.0"
+  }
+}
