@@ -1,18 +1,18 @@
-// src/database/db.js
-
 let db = null;
 
-// ถ้าเป็น Bun → ใช้ bun:sqlite
-if (typeof Bun !== "undefined") {
+const isBun = typeof Bun !== "undefined" && Bun.version;
+
+if (isBun) {
+  console.log("[DB] Running on Bun using bun:sqlite");
   db = require("./db.bun");
 } else {
-  // ถ้าเป็น Node ปกติ (แบบติดตั้ง) → ลองใช้ better-sqlite3
   try {
     require.resolve("better-sqlite3");
+    console.log("[DB] Running on Node with better-sqlite3");
     db = require("./db.node");
   } catch (err) {
-    console.warn("[DB] better-sqlite3 not found → fallback to db.bun.js");
-    db = require("./db.bun"); // fallback แบบ pure JS
+    console.warn("[DB] No better-sqlite3 → using Pure JS SQLite");
+    db = require("./db.puer");
   }
 }
 

@@ -6,14 +6,15 @@ const db = new Database(dbPath);
 
 db.prepare(`
   CREATE TABLE IF NOT EXISTS jobs (
-    id TEXT PRIMARY KEY,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    job_id TEXT UNIQUE,
     source TEXT,
-    title TEXT,
+    job_title TEXT,
     company TEXT,
     location TEXT,
-    salary TEXT,
+    salary_text TEXT,
+    posted_datetime TEXT,
     url TEXT,
-    posted_at TEXT,
     fetched_at TEXT
   );
 `).run();

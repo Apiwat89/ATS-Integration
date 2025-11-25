@@ -1,8 +1,9 @@
 const axios = require("axios");
+const env = require("../config/env");
 
 async function fetchRealJobsDB() {
   try {
-    const response = await axios.get("https://example.com/jobsdb/api"); // รอทีม JobsDB ส่งให้จริง
+    const response = await axios.get(env.JOBDB_API); // รอทีม JobsDB ส่งให้จริง
     return response.data;
   } catch (err) {
     console.error("Error fetching JobsDB API:", err.message);
