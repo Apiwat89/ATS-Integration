@@ -1,11 +1,13 @@
 const express = require("express");
 const app = express();
-const jobsdbRoute = require("./jobs-integration/routes/jobsdb.route");
+const jobRoutes = require("./routes/job.route");
+const initDatabase = require("./database/init");
 
-// ใช้งาน mock API
-app.use("/api/jobsdb", jobsdbRoute);
+initDatabase(); 
+
+app.use(express.json());
+app.use("/api/jobs", jobRoutes);
 
 const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
-});
+app.listen(PORT, () => console.log("Server running on", PORT));
+console.log(`Server running on http://localhost:${PORT}`);

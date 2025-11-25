@@ -1,0 +1,20 @@
+[
+  {
+    "job_id": "JT8888",
+    "title": "Backend Developer",
+    "company": "Charoen Pokphand Foods (CPF)",
+    "location": "Bangkok",
+    "salary": "45,000 THB",
+    "updated_at": "2025-11-25T08:20:00Z",
+    "url": "https://www.jobthai.com/job/JT8888"
+  },
+  {
+    "job_id": "JT9999",
+    "title": "IT Support",
+    "company": "CP Group",
+    "location": "Bangkok",
+    "salary": "20,000 - 30,000 THB",
+    "updated_at": "2025-11-23T14:10:00Z",
+    "url": "https://www.jobthai.com/job/JT9999"
+  }
+]
