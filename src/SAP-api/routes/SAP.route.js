@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const controller = require("../controllers/system.controller");
+const controller = require("../controllers/SAP.controller");
 
 router.get("/jobs/all", controller.getAllJobs);
 router.get("/jobs/jobdb", controller.getJobdb);

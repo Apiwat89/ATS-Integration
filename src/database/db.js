@@ -1,19 +1,22 @@
-let db = null;
+const Database = require("better-sqlite3");
+const path = require("path");
 
-const isBun = typeof Bun !== "undefined" && Bun.version;
+const dbPath = path.join(process.cwd(), "data", "jobs.db");
+const db = new Database(dbPath);
 
-if (isBun) {
-  console.log("[DB] Running on Bun using bun:sqlite");
-  db = require("./db.bun");
-} else {
-  try {
-    require.resolve("better-sqlite3");
-    console.log("[DB] Running on Node with better-sqlite3");
-    db = require("./db.node");
-  } catch (err) {
-    console.warn("[DB] No better-sqlite3 → using Pure JS SQLite");
-    db = require("./db.puer");
-  }
-}
+db.prepare(`
+  CREATE TABLE IF NOT EXISTS jobs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    job_id TEXT UNIQUE,
+    source TEXT,
+    job_title TEXT,
+    company TEXT,
+    location TEXT,
+    salary_text TEXT,
+    posted_datetime TEXT,
+    url TEXT,
+    fetched_at TEXT
+  );
+`).run();
 
 module.exports = db;

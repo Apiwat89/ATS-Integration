@@ -20,44 +20,13 @@ cd "D:\CPF Intern\ATS-Integration"
 npx nodemon src/server.js
 
 
+api web
+/api/jobs/jobsdb/mock
+/api/jobs/jobthai/mock
+/api/jobs/save-mock
 
-
-ATS-INTEGRATION/
-│
-├── data/
-│   └── jobs.db                 <-- SQLite database เก็บข้อมูล normalized แล้ว
-│
-├── mock/
-│   ├── jobsdb.json             <-- mock จาก JobsDB
-│   └── jobthai.json            <-- mock จาก JobThai
-│
-├── src/
-│   ├── config/
-│   │   └── env.js              <-- config ต่าง ๆ (ยังน้อย)
-│   │
-│   ├── controllers/
-│   │   └── job.controller.js   <-- รวม Controller พวก mock, saveMockToDb
-│   │
-│   ├── database/
-│   │   ├── db.node.js          <-- SQLite init (production)
-│   │   ├── db.bun.js
-│   │   ├── db.puer.js
-│   │   └── db.js               <-- ตัวเลือก DB loader
-│   │
-│   ├── routes/
-│   │   └── job.route.js        <-- API path ต่าง ๆ
-│   │
-│   ├── services/
-│   │   ├── jobsdb.service.js   <-- (อนาคต) ดึงจริงจาก JobsDB API
-│   │   ├── jobthai.service.js  <-- (อนาคต) ดึงจริงจาก JobThai API
-│   │   ├── mock.service.js     <-- ดึง mock สำหรับ dev
-│   │   └── save.service.js     <-- normalize + save เข้า DB
-│   │
-│   ├── utils/
-│   │   ├── cron.js             <-- cron schedule อัปเดต DB ทุก 1 นาที
-│   │   └── logger.js
-│   │
-│   └── server.js               <-- เริ่ม server + เรียก cron
-│
-├── package.json
-└── README.md
+api SAP team
+/SAP/jobs/all
+/SAP/jobs/jobdb
+/SAP/jobs/jobthai
+/SAP/jobs/:id

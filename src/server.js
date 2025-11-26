@@ -4,11 +4,11 @@ const app = express();
 require("./utils/cron");
 
 const jobRoutes = require("./routes/job.route");
-const systemRoutes = require("./system-api/routes/system.route");
+const SAPRoutes = require("./SAP-api/routes/SAP.route");
 
 app.use(express.json());
 app.use("/api/jobs", jobRoutes);
-app.use("/system", systemRoutes);
+app.use("/SAP", SAPRoutes);
 
 PORT = 3000;
 app.listen(PORT, () => {
