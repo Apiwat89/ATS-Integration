@@ -1,32 +1,14 @@
 # ATS-Integration
 
-ใช้เทส node ใช้งานได้ไหม แบบ Portable
-cd "D:\CPF Intern\node-v20.19.5-win-x64"
-.\npm.cmd -v
-.\npm.cmd init -y
+A Node.js application designed for integration with Applicant Tracking Systems (ATS). It periodically fetches job postings from external sources like JobsDB and JobThai, stores them locally, and makes them available through a dedicated API.
 
-หลังจากนั้นกลับมาที่
-cd "D:\CPF Intern\ATS-Integration"
-& "..\node-v20.19.5-win-x64\npm.cmd" init -y
-& "..\node-v20.19.5-win-x64\npm.cmd" install express
-.\npm.cmd install axios
-& "..\node-v20.19.5-win-x64\npm.cmd" install node-cron
+📌 **Features**
 
-เครื่องที่ไม่มี node
-& "D:\CPF\ATS Integration\node-v20.19.6-win-x64\node.exe" node_modules/nodemon/bin/nodemon src/server.js
+*   **Backend:** Built with Node.js & Express.js for robust performance.
+*   **Data Aggregation:** Automatically fetches and consolidates job data from JobsDB and JobThai.
+*   **Local Storage:** Uses SQLite for a simple, file-based local database (`data/jobs.db`).
+*   **API Exposure:** Provides a local API to access the aggregated job data.
+*   **SAP Integration:** Includes a dedicated set of API endpoints for SAP integration.
+*   **Mock Data:** Supports using mock data for development and testing.
 
-เครื่องที่มี node
-ืnpm install
-npx nodemon src/server.js
-
-
-api web
-/api/jobs/jobsdb/mock
-/api/jobs/jobthai/mock
-/api/jobs/save-mock
-
-api SAP team
-/SAP/jobs/all
-/SAP/jobs/jobdb
-/SAP/jobs/jobthai
-/SAP/jobs/:id
+📄 License Internal use only.
